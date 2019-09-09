@@ -6,13 +6,8 @@ namespace Gruel.Localization {
 	public class KeyReplacementPair {
 		
 #region Properties
-		public string TargetKey {
-			get => _targetKey;
-		}
-
-		public string ReplacementKey {
-			get => _replacementKey;
-		}
+		public string TargetKey => _targetKey;
+		public string ReplacementKey => _replacementKey;
 #endregion Properties
 
 #region Fields

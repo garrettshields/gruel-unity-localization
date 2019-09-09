@@ -5,7 +5,7 @@ namespace Gruel.Localization {
 	public class LocalizationController : MonoBehaviour {
 
 #region Properties
-		public static Action<SystemLanguage> OnLanguageChanged;
+		public static Action<SystemLanguage> OnLanguageChanged { get; set; }
 		public static bool Initialized { get; private set; }
 		
 		public static SystemLanguage Language {
@@ -41,6 +41,11 @@ namespace Gruel.Localization {
 
 			Instance = this;
 			_config.ParseTranslations();
+
+			// Set initial language.
+			var sysLanguage = UnityEngine.Application.systemLanguage;
+			Language = IsLocaleAvailable(sysLanguage) ? sysLanguage : FallbackLanguage;
+
 			Initialized = true;
 		}
 

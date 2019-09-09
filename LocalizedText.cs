@@ -21,6 +21,8 @@ namespace Gruel.Localization {
 		[Header("Translation Settings")]
 		[SerializeField] private bool _replaceTextUsingKey = true;
 		[SerializeField] private string _key;
+		
+		[Header("Partial replacement")]
 		[SerializeField] private string[] _stringReplace = new string[0];
 		[SerializeField] private KeyReplacementPair[] _keyReplacements;
 #endregion Fields
@@ -37,7 +39,6 @@ namespace Gruel.Localization {
 			}
 			
 			LocalizationController.OnLanguageChanged += LocaleChanged;
-		
 			SetText();
 		}
 

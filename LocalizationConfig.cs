@@ -34,7 +34,6 @@ namespace Gruel.Localization {
 		
 			for (int i = 0, n = _translationFiles.Length; i < n; i++) {
 				var pair = _translationFiles[i];
-//				var locale = (SystemLanguage)Enum.Parse(typeof(SystemLanguage), localeObj["locale"].Value<string>());
 				var language = pair.SystemLanguage;
 				var localeObj = JObject.Parse(pair.TranslationFile.text);
 				var localeTranslations = localeObj["translations"];
